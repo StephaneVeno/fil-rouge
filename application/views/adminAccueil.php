@@ -1,5 +1,5 @@
         <div class="admin container-fluid row" id="admin">
-            <div class="row col-8"> 
+            <div class="row flex-column"> 
                 <div class="col-12 col-sm-6 col-md-6 col-lg-8 col-xl-12 offset-1">
                     <h1 class="text-dark">Partie Admin</h1>
                     <section>
@@ -39,7 +39,7 @@
                     </section>
                 </div>
             </div>
-            <div class="col-4">
-                <img src="<?php echo base_url('assets/img/personnel/teste.png') ;?>" alt="lorem" class="img-personnel m-0 p-0 img-fluid d-sm-none"> 
+            <div class="col-4 offset-2 img-personnel">
+                <img src="<?php echo base_url('assets/img/personnel/teste.png') ;?>" alt="lorem" class="m-0 p-0 img-fluid "> 
             </div>        
         </div>

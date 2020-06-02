@@ -46,6 +46,11 @@ table thead{
         font-weight:500;
         left: 44%;
     }
+    .img-personnel {
+        width:100vw;
+        margin-left: 20px;
+        display: none;
+    }
 }
 
 @media (max-width: 575px){
@@ -103,6 +108,27 @@ table thead{
         text-align: center;
         background-color: #303030;
         color: ghostwhite!important;
+    }
+    [class="btn btnpers cv"]{
+        font-weight: 500;
+        display: contents;
+        font-size: calc(100% + 1.5rem);
+        color: white;
+        font-family: cursive;
+        text-shadow: 2px 0 1px darkslategrey;
+        transition:all .3s;
+    }
+    [class="btn btnpers sup"]{
+        font-weight: 500;
+        font-size: calc(100% + 1.5rem);
+        color: white;
+        font-family: cursive;
+        text-shadow: 2px 0 1px darkslategrey;
+        transition:all .3s;
+        text-align: center;
+    }
+    .img-personnel {
+        display: none;
     }
 
     }
