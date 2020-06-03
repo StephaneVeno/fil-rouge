@@ -17,7 +17,7 @@
             <tbody>
                 <?php foreach ($select_cat as $row) : ?>
                     <tr class="table-active">
-                        <td class="text-center d-sm-none btnportable"><a href="<?php echo site_url("categories/catModif/") . $row->CAT_ID; ?>" class="btn btnpers cv"><i class="fas fa-pencil-alt"></i>Ajouter</a>
+                        <td class="text-center d-sm-none btnportable"><a href="<?php echo site_url("categories/catAjouts/").$row->CAT_ID; ?>" class="btn btnpers cv"><i class="fas fa-pencil-alt"></i>Ajouter</a>
                         <td class="text-center"><a href="<?php echo site_url("categories/catModif/") . $row->CAT_ID; ?>" class="btn btnpers cv"><i class="fas fa-pencil-alt"></i>Modifier</a>
                         <td class="text-center">
                             <?= form_open("categories/catSuppr/" . $row->CAT_ID) ?>
