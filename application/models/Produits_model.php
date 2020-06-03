@@ -69,9 +69,10 @@ class Produits_model extends CI_Model {
 	}
 
 	public function get_produits($slug) {
-
-	$detail = $this->db->where("PRO_SLUG",$slug)->get("produits");
-	return $detail->row();
+		$detail = $this->db->select('*')->from('produits')->join('categorie', 'produits.CAT_ID = categorie.CAT_ID')->where('PRO_SLUG', $slug)->get();
+		return $detail->row();
+	/*$detail = $this->db->where("PRO_SLUG",$slug)->get("produits");
+	return $detail->row();*/
 
 	}
 

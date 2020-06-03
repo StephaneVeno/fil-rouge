@@ -35,13 +35,14 @@
 	left:-155px;
 	width:480px;height:auto;
 	column-count:2;
-	box-shadow:5px 5px 5px var(--new-b-primary);background-color: var(--new-b-second);}
+	box-shadow:5px 5px 5px var(--c-grey);
+	background-color: var(--c-grey);}
 
 .firstNav [data-toggle="dropdown"]{
-	color:var(--new-c-second);}
+	color:#007bff;}
 
 .drop-connexion{
-	border-right:1px solid var(--new-b-primary);}
+	border-right:1px solid var(--c-blue);}
 
 .drop-inscription,
 .drop-connexion{
@@ -74,7 +75,8 @@ form>span{
 	left:-25px;
 	padding:10px;
 	column-count:1;
-	box-shadow:5px 5px 5px var(--new-b-primary);background-color:var(--new-b-second);}
+	box-shadow:5px 5px 5px var(--c-grey);
+	background-color:var(--c-grey);}
 
 .thirdNav [data-toggle="dropdown"]{
 	color: whitesmoke;}
@@ -100,7 +102,7 @@ footer>section{
 	display:flex;}
 
 .btn-custom{
-	background-color:var(--new-c-second);
+	background-color:var(--c-orangeII);
 	color:white;}
 
 .btn-custom:hover{
