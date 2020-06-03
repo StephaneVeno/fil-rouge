@@ -21,10 +21,18 @@
 
 .root{
 	--new-c-primary: navy;
-	--new-c-second: #b55500;
-	--new-c-third: #4d4d4d;
-	--new-b-primary: #b3b3b3;
-	--new-b-second: #e6e6e6;}
+
+	--new-c-third: #4d4d4d; /*gris sombre*/
+	--new-c-four: #ff8600; /*orange vif*/
+	--new-b-second: #e6e6e6; /*gray */
+
+	--c-grey: #e6e6e6;
+	--c-dark:#303030;
+	--c-orange:#ff5a18;
+	--c-orangeII: #b55500;
+	--c-blue:navy;
+}
+.titre
 
 .container{
 	width:100%;
@@ -37,7 +45,7 @@ body{
 	z-index:1;}
 
 .wrap{
-	background-color:var(--new-b-second);
+	background-color:var(--c-grey);
 	z-index:2;}
 
 
