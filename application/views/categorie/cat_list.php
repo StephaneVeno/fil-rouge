@@ -17,11 +17,11 @@
             <tbody>
                 <?php foreach ($select_cat as $row) : ?>
                     <tr class="table-active">
-                        <td class="text-center d-sm-none btnportable"><a href="<?php echo site_url("categories/catModif/") . $row->CAT_ID; ?>" class="btn btnpers"><i class="fas fa-pencil-alt"></i>Ajouter</a>
-                        <td class="text-center"><a href="<?php echo site_url("categories/catModif/") . $row->CAT_ID; ?>" class="btn btnpers"><i class="fas fa-pencil-alt"></i>Modifier</a>
+                        <td class="text-center d-sm-none btnportable"><a href="<?php echo site_url("categories/catAjouts/").$row->CAT_ID; ?>" class="btn btnpers cv"><i class="fas fa-pencil-alt"></i>Ajouter</a>
+                        <td class="text-center"><a href="<?php echo site_url("categories/catModif/") . $row->CAT_ID; ?>" class="btn btnpers cv"><i class="fas fa-pencil-alt"></i>Modifier</a>
                         <td class="text-center">
                             <?= form_open("categories/catSuppr/" . $row->CAT_ID) ?>
-                            <input type="submit" name="sup" id="sup" class="btn btnpers" value="Supprimer"><i class="fas fa-pencil-alt"></i>
+                            <input type="submit" name="sup" id="sup" class="btn btnpers sup" value="Supprimer"><i class="fas fa-pencil-alt"></i>
                             <?= form_close(); ?>
                         </td>
                         <td data-label="Catégorie"><?= $row->CAT_ID ?> - <?= $row->CAT_LIBELLE ?></td>
