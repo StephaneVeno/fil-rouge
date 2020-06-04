@@ -8,10 +8,10 @@
         </a>
             <thead>
                 <tr>
-                    <th>Catégorie</th>
-                    <th>Catégorie parente</th>
                     <th>Modification</th>
                     <th>Suppression</th>
+                    <th>Catégorie</th>
+                    <th>Catégorie parente</th>
                 </tr>
             </thead>
             <tbody>
