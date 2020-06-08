@@ -25,9 +25,11 @@ class Categories extends CI_Controller
 
     $data["select_cat"] = $this->Categorie->select_cat();
 
+    $libelle='/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*$/';
+
     $resultajout = $this->input->post();
     $this->form_validation->set_rules('cat_cat', 'cat_cat', 'required', array('required' => 'Veuillez renseigner ce champ.'));
-    $this->form_validation->set_rules('libelle', 'libelle', "required", array('required' => 'Veuillez renseigner ce champ.'));
+    $this->form_validation->set_rules('libelle', 'libelle', "required|regex_match[$libelle]", array('required' => 'Veuillez renseigner ce champ.', 'regex_match'=>'Libelle incorrect'));
     $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
     if ($this->form_validation->run() == false) {
@@ -54,8 +56,10 @@ class Categories extends CI_Controller
     $data["select_cat"] = $this->Categorie->select_cat();
     $data["detail"] = $this->Categorie->detail($id);
     
+    $libelle='/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*$/';
+
     if ($this->input->post()) {
-      $this->form_validation->set_rules('libelle', 'libelle', "required", array('required' => 'Veuillez renseigner ce champ.'));
+      $this->form_validation->set_rules('libelle', 'libelle', "required|regex_match[$libelle]", array('required' => 'Veuillez renseigner ce champ.', 'regex_match'=>'Libelle incorrect'));
       $this->form_validation->set_rules('cat_cat', 'cat_cat', 'required', array('required' => 'Veuillez renseigner ce champ.'));
       $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
