@@ -32,8 +32,8 @@
                                 </button>
                                 <div class="collapse navbar-collapse pl-0" id="target1">
                                     <ul class="navbar-nav ml-auto pt-3 mr-2">
-                                        <li class="nav-item col-3 nav-link active pl-4">
-                                            <a class="" href="<?php echo site_url('structure/info') ?>" title="Information du site">Infos</a>
+                                        <li class="nav-item active col-xs-3">
+                                            <?= anchor('structure/other/info/#info', "Info", ["class" => "nav-link pl-4"]);?>
                                         </li>
                                    
                                         <div class="dropdown nav-link active col-5">
@@ -92,13 +92,15 @@
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
 
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("structure/assistance");?>">Service</a></li>
-
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("structure/aide");?>">Aide</a></li>
-
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?=site_url('structure/propos');?>">A propos</a></li>
-
-                                       
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/service/#service', "Service", ["class" => "nav-link pl-4"]);?>
+                                            </li>
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/aide/#aide', "Aide", ["class" => "nav-link pl-4"]);?>
+                                            </li>
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/propos/#propos', "As propos", ["class" => "nav-link pl-4"]);?>
+                                            </li>                                       
                                         </ul>
                                     </div>
                                 </nav>
