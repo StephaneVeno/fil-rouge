@@ -10,7 +10,7 @@
 <section class="row py-5">
 	<div class="wrap-produits my-5 row">
 
-		<?php foreach ($data as $pro) { ?>
+		<?php foreach ($dataC as $pro) { ?>
 		
 		<div class="card my-5 mx-auto">
 			<div class="face revers1">

@@ -132,7 +132,8 @@
                                             <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Ukulélés">Ukulélés</a></li>
                                             <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Autres instruments à cordes pincées">Autres instruments à cordes pincées</a></li>
                                         </ul>
-                                    </div>    
+                                    </div>
+>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Batteries">Batteries</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Clavier">Clavier</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Studio">Studio</a></li>
