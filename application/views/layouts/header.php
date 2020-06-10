@@ -89,7 +89,15 @@
                                     <div class="collapse navbar-collapse pl-0" id="target2">
                                         <ul class="navbar-nav ml-auto pl-0 pr-0">
 
+
                                         <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === 'admin') {?>
+
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
+
+                                        <?php } ?>
+
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
+
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
 
