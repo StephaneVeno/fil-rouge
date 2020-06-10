@@ -31,14 +31,4 @@ class Structure extends CI_Controller
   {
       $this->templates->display('info');
   }
-
-
-  public function inscription() {
-
-    if($this->form_validation->run()) {
-      $this->accueil();
-    } else {
-      $this->templates->display('inscription');
-    }
-  }
 }
