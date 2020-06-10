@@ -72,6 +72,7 @@ class Structure extends CI_Controller {
     $this->templates->display('annexes/plan_du_site');
   }
 
+
     /*
     --------------------------------------MODAL------------------------------------------------
     */
@@ -84,4 +85,5 @@ class Structure extends CI_Controller {
       $this->templates->display('inscription');
     }
   }
+
 }

@@ -57,7 +57,7 @@
                                                     <!--Cotée Droite-->
                                                     <span>Vous n'êtes pas encore inscript ?</span>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                                                    <a href="<?php echo site_url('structure/inscription') ?>" name="inscription" class="btn btn-success">S'inscrire</a>
+                                                    <a href="<?php echo site_url('clients/inscription') ?>" name="inscription" class="btn btn-success">S'inscrire</a>
                                                     <label class="text-center" for="inscription">
                                                         <a href="#" title="plus d'information sur les modalitées d'inscription">Plus d'information</a>
                                                     </label>
