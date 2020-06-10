@@ -31,3 +31,22 @@ section .titre-assistance:first-letter, .section-info div h3:first-letter {
 	border-radius: 8px;
 	padding:0;
 	margin:0;}
+
+/* plan du site */
+
+.titre-sitemap {
+	color:black;
+	font-size:1.25rem;
+	font-weight:500;
+	border-bottom:1px solid inherit;
+}
+.plan-de-site div ul li {
+	color:black;
+	font-weight:500;
+	font-size:1.25rem;
+}
+.map iframe{
+	border-radius:5px;
+	border-color:gray;
+	height:100vh;
+}

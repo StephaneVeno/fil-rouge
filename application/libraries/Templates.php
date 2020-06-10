@@ -28,6 +28,8 @@ class Templates
 	{
 		// /!\ Les blocs de vue doivent etre dans l'ordre de leur affichage 
 		$aDefaultDisplay = array('layouts/header', $sViewName, 'layouts/footer');
+
+
 		
 		/* Si le tableau aNotDisplay n'est pas vide, on supprime du tableau 
 		* $aDefaultDisplay les parties de vue à ne pas afficher   

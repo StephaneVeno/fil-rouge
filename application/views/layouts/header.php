@@ -32,8 +32,8 @@
                                 </button>
                                 <div class="collapse navbar-collapse pl-0" id="target1">
                                     <ul class="navbar-nav ml-auto pt-3 mr-2">
-                                        <li class="nav-item col-3 nav-link active pl-4">
-                                            <a class="" href="<?php echo site_url('structure/info') ?>" title="Information du site">Infos</a>
+                                        <li class="nav-item active col-xs-3">
+                                            <?= anchor('structure/other/info/#info', "Info", ["class" => "nav-link pl-4"]);?>
                                         </li>
                                    
                                         <div class="dropdown nav-link active col-5">
@@ -89,6 +89,7 @@
                                     <div class="collapse navbar-collapse pl-0" id="target2">
                                         <ul class="navbar-nav ml-auto pl-0 pr-0">
 
+
                                         <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === 'admin') {?>
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
@@ -97,13 +98,22 @@
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
 
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("structure/assistance");?>">Service</a></li>
 
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("structure/aide");?>">Aide</a></li>
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
 
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?=site_url('structure/propos');?>">A propos</a></li>
+                                        <?php } ?>
 
-                                       
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
+
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/service/#service', "Service", ["class" => "nav-link pl-4"]);?>
+                                            </li>
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/aide/#aide', "Aide", ["class" => "nav-link pl-4"]);?>
+                                            </li>
+                                            <li class="nav-item active col-xs-3">
+                                                <?= anchor('structure/other/propos/#propos', "As propos", ["class" => "nav-link pl-4"]);?>
+                                            </li>                                       
                                         </ul>
                                     </div>
                                 </nav>
@@ -135,7 +145,8 @@
                                             <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Ukulélés">Ukulélés</a></li>
                                             <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Autres instruments à cordes pincées">Autres instruments à cordes pincées</a></li>
                                         </ul>
-                                    </div>    
+                                    </div>
+>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Batteries">Batteries</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Clavier">Clavier</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Studio">Studio</a></li>

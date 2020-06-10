@@ -89,7 +89,8 @@
 					<!--fil d'arianne-->
 					<nav aria-label="Breadcrumb" class="fil-arianne">
 						<ul class="pl-0">
-							<li><a class="link-arianne" href="">Plan d'accès</a>&nbsp;/&nbsp;</li>
+							<li>
+								<?= anchor('structure/plan_du_site', "Plan d'accèes", ["class" => "link-arianne"]);?>&nbsp;/&nbsp;</li>
 							<li><a class="link-arianne" href="">Visite virtuelle</a></li>
 						</ul>
 					</nav>
@@ -130,6 +131,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" ></script>
-
 </body>
 </html>

@@ -10,32 +10,34 @@
 				<a class="text-center link-arianne" href=""><?php echo $detail->CAT_LIBELLE;?>&nbsp;</a>
 			</li>
 			<li>
-				<span class="text-center text-light">&gt;&nbsp;</span>
+				<span class="text-center text-muted">&gt;&nbsp;</span>
 			</li>
 			<li>
-				<span class="text-center text-light">Todo : Subcat</span>
+				<span class="text-center text-muted">Todo : Subcat</span>
 			</li>
 			<li>
-				<span class="text-center text-light">&gt;&nbsp;</span>
+				<span class="text-center text-muted">&gt;&nbsp;</span>
 			</li>
 			<li>
-				<span class="c-custom"><?php echo $detail->PRO_LIBELLE;?></span>
+				<span class="detail-libelle"><?php echo $detail->PRO_LIBELLE;?></span>
 			</li>
 		</ul>
 	</nav>
 
-	<figure class="row p-0 m-auto">
-		<img src="<?php echo base_url() ;?>assets/img/produits/listes/<?php echo $detail->PRO_SLUG;?>.<?php echo $detail->PRO_PHOTO;?>" alt="<?php echo $detail->PRO_LIBELLE;?>" title="<?php echo $detail->PRO_LIBELLE;?>" class="img-fluid m-3">
-	</figure>
-
 	<div class="row col-12 p-0 m-0 wrap-detail-desc">
-		<p class="col-10 offset-1 p-2 my-0 c-custom"><?php echo $detail->PRO_LIBELLE;?></p>
 		<div class="row col-12 m-0 p-0">
-			<div class="col-md-12 col-lg-5 offset-lg-1 bg-light-0 p-3 my-4 mr-lg-4">
-				<p>Description du produit&nbsp;:</p>
-				<p class=""><?php echo $detail->PRO_DESCRIPTION; ?></p>
+
+			<div class="col-sm-12 col-lg-5 bg-light-0 p-3 my-4 text-center">
+				<img src="<?php echo base_url() ;?>assets/img/produits/listes/<?php echo $detail->PRO_SLUG;?>.<?php echo $detail->PRO_PHOTO;?>" alt="<?php echo $detail->PRO_LIBELLE;?>" title="<?php echo $detail->PRO_LIBELLE;?>" class="img-fluid m-3">
 			</div>
-			<div class="col-md-12 col-lg-5 bg-light-0 p-3 my-4">
+
+			<div class="col-sm-12 col-lg-6 bg-light-0 p-3 my-4 row">
+				<div class="col-sm-11 offset-1 bg-light-0 p-3 my-4 mr-lg-4">
+					<p>Description du produit&nbsp;:</p>
+					<p class=""><?php echo $detail->PRO_DESCRIPTION; ?></p>
+				</div>
+
+				<div class="col-sm-11 offset-1 bg-light-0 p-3 my-4 detail-tech">
 				<p> Fiche Technique&nbsp;:</p>
 				<table class="table table-striped text-center">
 					<tr>
@@ -63,10 +65,8 @@
 						<td><?php echo $elemR?></td>
 					</tr>
 				</table>
-			</div>			
+				</div>
+			</div>
 		</div>
-
-
 	</div>
-
 </div>

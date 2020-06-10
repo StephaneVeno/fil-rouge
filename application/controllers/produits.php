@@ -1,9 +1,13 @@
 <?php
-
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
 // toucher pas à ma PUTAIN d'indentation, merci <3
+
+/*
+* @param array librairy inflector : Librairy de réécriture url
+* @param $string form librairy : Librairy natif de CI
+* @param $string form_validation librairy : Librairy natif de CI
+*/
 class Produits extends CI_Controller {
     public function __construct() {
         parent::__construct();
@@ -12,35 +16,42 @@ class Produits extends CI_Controller {
                    ->library('form_validation');
     }
 
-    //a defaut d'avoir un Ctrl central
+
+
+    /*
+    * Simplement pour réduire la répétition
+    * @param array [ 'donnée' => refObj->model->method() ]
+    * return array
+    */
+    private function data($data = array() ) {
+        return $data = 
+            array( 'dataC' => $this->produits_model->get_produits_for_client(),
+                   'data' => $this->produits_model->get_produits_for_personnal(),
+                   'cat_exist' => $this->produits_model->get_categories_data()
+            );
+    }
+
+    /*
+    * Redirection
+    */
     public function index() {
-        $data['data'] = $this->produits_model->get_produits_for_client();
-        $data['cat_exist'] = $this->produits_model->get_categories_data();
-        $this->templates->display('produits/index', $data);
+        $this->templates->display('produits/index', $data = self::data(array(0,2)));
     }
 
     public function list() {
-        $data['data'] = $this->produits_model->get_produits_for_personnal();
-        $data['cat_exist'] = $this->produits_model->get_categories_data();
-        $this->templates->display('produits/pro_list', $data);
+        $this->templates->display('produits/pro_list', $data = self::data(array(1,2)));
     }
 
     public function ajout() {
-        $data['data'] = $this->produits_model->get_produits_for_personnal();
-        $data['cat_exist'] = $this->produits_model->get_categories_data();
-        $this->templates->display('produits/proAjouts', $data);
+        $this->templates->display('produits/proAjouts', $data = self::data(array(1,2)));
     }
 
     public function modif() {
-        $data['data'] = $this->produits_model->get_produits_for_personnal();
-        $data['cat_exist'] = $this->produits_model->get_categories_data();
-        $this->templates->display('produits/proModif', $data);
+        $this->templates->display('produits/proModif', $data = self::data(array(1,2)));
     }
 
     public function del() {
-        $data['data'] = $this->produits_model->get_produits_for_personnal();
-        $data['cat_exist'] = $this->produits_model->get_categories_data();
-        $this->templates->display('produits/proDelete', $data);
+        $this->templates->display('produits/proDelete', $data = self::data(array(1,2)));
     }
 
     public function create_produits() {
@@ -48,11 +59,7 @@ class Produits extends CI_Controller {
         if($this->input->post('create_pro')) {
             
             if($this->form_validation->run('create') == FALSE) {
-
-                //retribution des data
-                $data['data'] = $this->produits_model->get_produits_for_personnal();
-                $data['cat_exist'] = $this->produits_model->get_categories_data();
-                $this->templates->display('produits/proAjouts', $data);
+                $this->ajout();
             } else {
                 $config['upload_path'] = './assets/img/produits/listes/';
                 $config['allowed_types'] = 'jpg|png';
@@ -69,16 +76,12 @@ class Produits extends CI_Controller {
 
                     $errors = array('error' => $this->upload->display_errors());
                     $pro_img = 'noimage.jpg';
-                    $data['data'] = $this->produits_model->get_produits_for_personnal();
-                    $data['cat_exist'] = $this->produits_model->get_categories_data();
-                    $this->templates->display('produits/proAjouts', $data);
+                    $this->ajout();
                 } else {
                     $data = array('upload_data' => $this->upload->data());
                     $pro_img = substr($this->upload->data('file_ext'), 1);
                     $this->produits_model->insert_produits($pro_img, $slug);
-                    $data['data'] = $this->produits_model->get_produits_for_personnal();
-                    $data['cat_exist'] = $this->produits_model->get_categories_data();
-                    $this->templates->display('produits/pro_list', $data);
+                    $this->list();
                 }
             }
         }
@@ -91,9 +94,8 @@ class Produits extends CI_Controller {
        
             if($this->form_validation->run('update') == FALSE) {
 
-                $data['data'] = $this->produits_model->get_produits_for_personnal();
-                $data['cat_exist'] = $this->produits_model->get_categories_data();
-                $this->templates->display('produits/proModif', $data);
+                $this->modif();
+            
             } else {
                 $config['upload_path'] = './assets/img/produits/listes/';
                 $config['allowed_types'] = 'jpg|png';
@@ -110,13 +112,13 @@ class Produits extends CI_Controller {
 
                     $errors = array('error' => $this->upload->display_errors());
                     $pro_img = 'noimage.jpg';
-                    redirect('produits/proModif');
+                    $this->modif();
                 } else {
 
                     $data = array('upload_data' => $this->upload->data());
                     $pro_img = substr($this->upload->data('file_ext'), 1);
                     $this->produits_model->update_produits($pro_img, $slug);
-                    redirect('produits/pro_list');
+                    $this->list();
                 }
             }
         }
@@ -127,7 +129,7 @@ class Produits extends CI_Controller {
         if ($this->input->post('delete_pro')) {
             $id = $this->input->post('pro_exist');
             $this->produits_model->delete_produits($id);
-            redirect('produits/pro_list');
+            $this->list();
         }
     }
 
