@@ -72,18 +72,4 @@ class Structure extends CI_Controller {
     $this->templates->display('annexes/plan_du_site');
   }
 
-
-    /*
-    --------------------------------------MODAL------------------------------------------------
-    */
-
-  public function inscription() {
-
-    if($this->form_validation->run()) {
-      $this->accueil();
-    } else {
-      $this->templates->display('inscription');
-    }
-  }
-
 }

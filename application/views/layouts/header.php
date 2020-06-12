@@ -44,7 +44,7 @@
                                                     <!--Cotée Gauche-->
                                                     <span>Êtes-vous déjà clients chez nous ?</span>
                                                     <input class="form-control" type="email" name="mail" placeholder="Adresse E-mail">
-                                                    <input class="form-control" type="text" name="password" placeholder="Mot de passe">
+                                                    <input class="form-control" type="password" name="password" placeholder="Mot de passe">
                                                     <input class="form-check-control" type="checkbox" name="always_connexion">
                                                     <label for="always_connexion">Rester connectée ?</label>
                                                     <button name="connexion" class="btn btn-success">Se connecter maintenant</button>
@@ -91,13 +91,6 @@
 
 
                                         <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === 'admin') {?>
-
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
-
-                                        <?php } ?>
-
-                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
-
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
 
