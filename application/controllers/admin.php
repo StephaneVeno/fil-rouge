@@ -54,20 +54,31 @@ class Admin extends CI_Controller
    */
   public function new_session_client()
   {
+    $mail ="/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/";
+    $pwd = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/";
 
-    $requete = $this->admin->session_client;
+    $this->form_validation->set_rules('mail', 'mail', "required|regex_match[$mail]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Mail incorrect'));
+    $this->form_validation->set_rules('password', 'password', "required|regex_match[$pwd]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Le mot de passe doit contenir : une majuscule, une minuscule, un chiffre, un caractère spécial et huit caractère minimum'));
+    $this->form_validation->set_rules('comfirm_password', 'comfirm_password', 'required|matches[password]', array('required' => 'Veuillez renseigner ce champ.'));
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-    $this->session->set_userdata('client', TRUE);
-    $dataClient = array(
-      'CLI_ID' => $requete->CLI_ID,
-      'CLI_PRENOM' => $requete->CLI_PRENOM,
-      'CLI_MAIL' => $requete->CLI_MAIL,
-      'CLI_TYPE' => $requete->CLI_TYPE,
-      'CLI_ADRESSE_FACTURATION' => $requete->CLI_ADRESSE_FACTURATION,
-      'CLI_COEFFICIENT' => $requete->CLI_COEFFICIENT
-    );
-    $this->session->set_userdata('sess_client', $dataClient);
+    if ($this->form_validation->run() == false) {
+      $res = $this->input->post();
+      $requete = $this->Administration->session_client();
+      $this->session->set_userdata('client', TRUE);
+      $dataClient = array(
+        'CLI_ID' => $requete->CLI_ID,
+        'CLI_MAIL' => $requete->$res['mail'],
+        'CLI_MDP'=> $requete->$res['password'],
+        'CLI_ROLE'=>$requete->CLI_ROLE
+  
+      );
+      $this->session->set_userdata('client', $dataClient);
+    }    
+   else {
+    $this->templates->display('accueil');
   }
+}
   /**
    * \brief Suppression d'une session client
    * \return Suppression d'une session client
