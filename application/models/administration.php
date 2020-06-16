@@ -11,7 +11,7 @@ class Administration extends CI_Model
     {
 
         $query = $this->db->query("SELECT * FROM clients");
-        return $query->result();
+        return $query->row();
     }
     /**
      * \brief Selection de toute la table personnels

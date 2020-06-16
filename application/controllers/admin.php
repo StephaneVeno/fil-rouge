@@ -68,12 +68,12 @@ class Admin extends CI_Controller
       $this->session->set_userdata('client', TRUE);
       $dataClient = array(
         'CLI_ID' => $requete->CLI_ID,
-        'CLI_MAIL' => $requete->$res['mail'],
-        'CLI_MDP'=> $requete->$res['password'],
-        'CLI_ROLE'=>$requete->CLI_ROLE
-  
+        'CLI_MAIL' => $requete->CLI_MAIL,
+        'CLI_MDP'=> $requete->CLI_MDP,
+        'CLI_ROLE'=>$requete->CLI_ROLE, 
       );
       $this->session->set_userdata('client', $dataClient);
+      redirect('produits/index');
     }    
    else {
     $this->templates->display('accueil');
