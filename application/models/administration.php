@@ -10,7 +10,7 @@ class Administration extends CI_Model
     public function session_client()
     {
 
-        $query = $this->db->query("SELECT * FROM infos_contact_client");
+        $query = $this->db->query("SELECT * FROM clients");
         return $query->result();
     }
     /**
