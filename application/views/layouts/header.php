@@ -37,11 +37,13 @@
                                         </li>
                                    
                                         <div class="dropdown nav-link active col-5">
-                                        <?php if(!$this->session->userdata('CLI_ROLE')) : ?>
                                             <button type="button" data-toggle="dropdown" class="nav-link pl-4">Espace Client<span class="void"></span>
                                             </button>                   
                                             <div class="dropdown-menu">
-                                                <?php echo form_open_multipart('admin/new_session_client')?>
+                                            <?php if(isset($_SESSION["client"]) && $_SESSION["client"] == true){ ?>
+                                                        <a href="<?php echo site_url('admin/sup_session');?>" class="btn">se déconnecter</a>
+                                            <?php } else { ?>
+                                                    <?php echo form_open_multipart('admin/new_session_client')?>
                                                     <!--Cotée Gauche-->
                                                     <span>Êtes-vous déjà clients chez nous ?</span>
                                                     <input class="form-control" type="email" name="mail" placeholder="Adresse E-mail">
@@ -52,7 +54,6 @@
                                                     <label for="always_connexion">Rester connectée ?</label>
                                                     <button name="connexion" class="btn btn-success">Se connecter maintenant</button>
                                                     <?php echo form_close(); ?>
-                                         <?php endif; ?>
                                                     <label  class="text-center" for="connexion">
                                                         <a href="#" alt="Mot de passe oublié?" title="Mot de passe oublié?">Mot de passe oublié?</a>
                                                     </label>
@@ -65,6 +66,7 @@
                                                         <a href="#" title="plus d'information sur les modalitées d'inscription">Plus d'information</a>
                                                     </label>
                                                 </form>
+                                            <?php } ?>
                                             </div>
                                         </div>
 

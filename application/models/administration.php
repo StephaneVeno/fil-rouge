@@ -23,6 +23,6 @@ class Administration extends CI_Model
     {
 
         $query = $this->db->query("SELECT * FROM personnels");
-        return $query->result();
+        return $query->row();
     }
 }

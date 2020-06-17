@@ -59,24 +59,23 @@ class Admin extends CI_Controller
 
     $this->form_validation->set_rules('mail', 'mail', "required|regex_match[$mail]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Mail incorrect'));
     $this->form_validation->set_rules('password', 'password', "required|regex_match[$pwd]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Le mot de passe doit contenir : une majuscule, une minuscule, un chiffre, un caractère spécial et huit caractère minimum'));
-    $this->form_validation->set_rules('comfirm_password', 'comfirm_password', 'required|matches[password]', array('required' => 'Veuillez renseigner ce champ.'));
     $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
     if ($this->form_validation->run() == false) {
-      $res = $this->input->post();
-      $requete = $this->Administration->session_client();
-      $this->session->set_userdata('client', TRUE);
-      $dataClient = array(
-        'CLI_ID' => $requete->CLI_ID,
-        'CLI_MAIL' => $requete->CLI_MAIL,
-        'CLI_MDP'=> $requete->CLI_MDP,
-        'CLI_ROLE'=>$requete->CLI_ROLE, 
-      );
-      $this->session->set_userdata('client', $dataClient);
-      redirect('produits/index');
+      $this->templates->display('accueil');
     }    
    else {
-    $this->templates->display('accueil');
+    $res = $this->input->post();
+    $requete = $this->Administration->session_client();
+    $this->session->set_userdata('client', TRUE);
+    $dataClient = array(
+      'CLI_ID' => $requete->CLI_ID,
+      'CLI_MAIL' => $requete->CLI_MAIL,
+      'CLI_MDP'=> $requete->CLI_MDP,
+      'CLI_ROLE'=>$requete->CLI_ROLE, 
+    );
+    $this->session->set_userdata('client', $dataClient);
+    redirect('produits/index');
   }
 }
   /**
@@ -89,6 +88,7 @@ class Admin extends CI_Controller
   {
     $this->session->unset_userdata('client', 'sess_client');
     $this->session->sess_destroy('client', 'sess_client');
+    redirect('structure/accueil');
   }
   /**
    * \brief Formulaire de création d'une nouvelle session admin
@@ -99,8 +99,18 @@ class Admin extends CI_Controller
   public function new_session_admin()
   {
 
-    $requete = $this->admin->session_admin;
+    $mail ="/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/";
+    $pwd = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/";
 
+    $this->form_validation->set_rules('mail', 'mail', "required|regex_match[$mail]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Mail incorrect'));
+    $this->form_validation->set_rules('password', 'password', "required|regex_match[$pwd]", array('required' => 'Veuillez renseigner ce champ.','regex_match' => 'Le mot de passe doit contenir : une majuscule, une minuscule, un chiffre, un caractère spécial et huit caractère minimum'));
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+    if ($this->form_validation->run() == false) {
+      $this->templates->display('accueil');
+    }    
+   else {
+    $requete = $this->Administration->session_admin();
     $this->session->set_userdata('admin', TRUE);
     $dataAdmin = array(
       'PER_ID' => $requete->PER_ID,
@@ -108,7 +118,9 @@ class Admin extends CI_Controller
       'PER_SERVICE' => $requete->PER_SERVICE,
       'COEFFICIENT_COMMERCIAL' => $requete->COEFFICIENT_COMMERCIAL
     );
-    $this->session->set_userdata('sess_admin', $dataAdmin);
+    $this->session->set_userdata('admin', $dataAdmin);
+    redirect('adminAccueil');
+  }
   }
   /**
    * \brief Suppression d'une session client
@@ -120,5 +132,6 @@ class Admin extends CI_Controller
   {
     $this->session->unset_userdata('admin', 'sess_admin');
     $this->session->sess_destroy('admin', 'sess_admin');
+    redirect('structure/accueil');
   }
 }
