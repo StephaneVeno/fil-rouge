@@ -95,11 +95,11 @@
                                         <ul class="navbar-nav ml-auto pl-0 pr-0">
 
 
-                                        <?php if (isset($_SESSION["PER_ROLE"]) && $_SESSION["PER_ROLE"] === 'admin') {?>
+                                        <?php/* if (isset($_SESSION["PER_ROLE"]) && $_SESSION["PER_ROLE"] === 'admin') {*/?>
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
 
-                                        <?php } ?>
+                                        <?php/* } */?>
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("produits/index");?>">Produits</a></li>
 
