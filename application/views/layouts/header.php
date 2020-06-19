@@ -94,10 +94,14 @@
                                     <div class="collapse navbar-collapse pl-0" id="target2">
                                         <ul class="navbar-nav ml-auto pl-0 pr-0">
 
-
-                                        <?php if (isset($_SESSION["PER_ROLE"]) && $_SESSION["PER_ROLE"] === 'admin') {?>
+                                        <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true) {?>
 
                                             <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/adminAccueil");?>">Administration</a></li>
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url('admin/sup_session_admin');?>" >se déconnecter</a></li>
+
+                                        <?php } else { ?>
+
+                                            <li class="nav-item active col-xs-3"><a class="nav-link pl-4" href="<?php echo site_url("admin/connexionAdmin");?>">Espace Personnel</a></li>
 
                                         <?php } ?>
 

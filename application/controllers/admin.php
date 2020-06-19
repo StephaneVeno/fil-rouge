@@ -42,8 +42,11 @@ class Admin extends CI_Controller
   {
     $this->templates->display('BonLiv');
   }
-  //------------------------------------------------------------------------------------------------------
 
+  public function connexionAdmin()
+  {
+    $this->templates->display('connexionAdmin');
+  }
 
 
   /**
@@ -90,12 +93,7 @@ class Admin extends CI_Controller
     $this->session->sess_destroy('client', 'sess_client');
     redirect('structure/accueil');
   }
-  /**
-   * \brief Formulaire de création d'une nouvelle session admin
-   * \return Formulaire de création d'une nouvelle session admin
-   * \author Grillet Stéphane
-   * \date 26/05/2020
-   */
+
   public function new_session_admin()
   {
 
@@ -109,17 +107,19 @@ class Admin extends CI_Controller
     if ($this->form_validation->run() == false) {
       $this->templates->display('accueil');
     }    
-   else {
+    else {
+    $this->input->post();
     $requete = $this->Administration->session_admin();
     $this->session->set_userdata('admin', TRUE);
     $dataAdmin = array(
       'PER_ID' => $requete->PER_ID,
-      'PER_MATRICULE' => $requete->PER_MATRICULE,
-      'PER_SERVICE' => $requete->PER_SERVICE,
-      'COEFFICIENT_COMMERCIAL' => $requete->COEFFICIENT_COMMERCIAL
+      'PER_EMAIL' => $requete->PER_EMAIL,
+      'PER_MDP' => $requete->PER_MDP,
+      'PER_ROLE'=>$requete->PER_ROLE, 
+
     );
     $this->session->set_userdata('admin', $dataAdmin);
-    redirect('adminAccueil');
+    redirect('structure/accueil');
   }
   }
   /**
