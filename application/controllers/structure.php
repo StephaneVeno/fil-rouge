@@ -48,4 +48,8 @@ class Structure extends CI_Controller {
     $this->templates->display('annexes/plan_du_site');
   }
 
+  public function other() { 
+    $this->templates->display('annexes/other');
+
+  }
 }
