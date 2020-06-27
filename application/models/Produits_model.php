@@ -25,7 +25,7 @@ class Produits_model extends CI_Model {
 		$data = array(
 			'PRO_LIBELLE' => $this->input->post('pro_lib'),
 			'PRO_REF' => $this->input->post('pro_ref'),
-			'PRO_DESCRIPTION' => $this->input->post('pro_desc'),
+			'PRO_DESCRIPTION' => $this->input->post(trim('pro_desc')),
 			'PRO_PRIX_ACHAT' => $this->input->post('pro_prix'),
 			'PRO_STOCK_PHYSIQUE' => $this->input->post('pro_stock'),
 			'CAT_ID' => $this->input->post('cat_exist'),
@@ -71,8 +71,6 @@ class Produits_model extends CI_Model {
 	public function get_produits($slug) {
 		$detail = $this->db->select('*')->from('produits')->join('categorie', 'produits.CAT_ID = categorie.CAT_ID')->where('PRO_SLUG', $slug)->get();
 		return $detail->row();
-	/*$detail = $this->db->where("PRO_SLUG",$slug)->get("produits");
-	return $detail->row();*/
 
 	}
 

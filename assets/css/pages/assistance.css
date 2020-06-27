@@ -22,6 +22,10 @@ section .titre-assistance:first-letter, .section-info div h3:first-letter {
 	color: orangered;
 	font-size:calc(100% + .25rem);}
 
+.section-info article{
+		padding-left:0!important;
+	}
+
 .section-info article p {
 	text-indent:1.5rem;
 	color:gray;

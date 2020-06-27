@@ -64,6 +64,46 @@ h1,h2{
 	max-width: 12.5%;
 	height: auto;
 }
+/*new css*/
+	.table-active td {
+		padding:0;
+		text-align:center;
+}
+	.table-striped {
+		overflow-x:auto;
+
+	}
+	.table-active > td textarea {
+		border:none!important;
+		height:100%;
+		background-color:#d5d5d5;
+		resize: none;
+		text-align:left!important;
+		text-indent:0!important;
+		color:black;
+		font-weight:500;
+
+	}
+/*refonte css liste produits*/
+.admin-produits .produits figure img{
+	background-color:white;
+	border-radius: 0 35px 35px 0;
+
+}
+.admin-produits .produits > h3 {
+	color:orange;
+	font-weight:501;
+	background-color:#222;
+	border-bottom:3px solid orange;
+	font-style:oblique;
+}
+.admin-produits .produits .info-produits h3 {
+	color:black;
+	font-weight:501;
+	border-bottom:3px solid black;
+	font-style:oblique;
+	max-width:max-content;
+}
 
 /**=A1************************************ Media query ********************************************/
 @media (min-width: 1281px) and (max-width: 2000px) {
@@ -145,6 +185,7 @@ h1,h2{
 	[alt="partenaires"] {
 		width: 87%;
 	}
+	.table-striped > tbody
 
 
 
@@ -164,6 +205,7 @@ h1,h2{
 	[alt="partenaires"] {
 		width: 87%;
 	}
+
 
 
 }
@@ -224,6 +266,10 @@ h1,h2{
 	[title="top piano"] {
 		width: 100%;
 		margin: 0 !important;
+	}
+
+	[alt="village Lorem"] {
+		display:none;
 	}
 
 	.res-condition {

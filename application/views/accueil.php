@@ -81,13 +81,13 @@
                 </a>
             </figure>
             <figure class="col-auto col-sm-2">
-                <a class="ventes-link" href="<?php echo site_url("produits/detail");?>">
+                <a class="ventes-link" href="<?php echo site_url("produits/index");?>">
                     <img class="mx-4" src="<?= base_url('assets/img/produits/TOP_VENTES_saxo.png') ?>" onmouseover="this.src='assets/img/TOP_VENTES_ROLL_OVER_saxo.png'" onmouseout="this.src='assets/img/produits/TOP_VENTES_saxo.png'" title="top saxo" alt="">
                 </a>
             </figure>
 
             <figure class="col-auto col-sm-2">
-                <a class="ventes-link" href="<?php echo site_url("produits/detail");?>">
+                <a class="ventes-link" href="<?php echo site_url("produits/index");?>">
                     <img class="mx-4" src="<?= base_url('assets/img/produits/TOP_VENTES_piano.png'); ?>" onmouseover="this.src='assets/img/TOP_VENTES_ROLL_OVER_piano.png'" onmouseout="this.src='assets/img/produits/TOP_VENTES_piano.png'" title="top piano" alt="">
                 </a>
             </figure>
