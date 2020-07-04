@@ -23,7 +23,7 @@ class Fournisseurs extends CI_Controller
   {
     if($this->input->post())
     {
-      $adresse ="/^[0-9a-zA-Z]+(?:(?:[\'\s\-\/])?[a-zA-Z]+)*$/";
+      $adresse ="/^[0-9a-zA-Z\s]+(?:(?:[\'\s\-\/])?[a-zA-Z]+)*$/";
       $ref = "/^[0-9a-zA-Z]*$/";
 
       $this->form_validation->set_rules('adresse','adresse',"required|regex_match[$adresse]",array('required' => 'Il faut une %s ','regex_match' => 'Il faut une %s '));
@@ -61,7 +61,7 @@ class Fournisseurs extends CI_Controller
     $data["fournisseurs"]=$fourni;
     if($this->input->post())
     {
-      $adresse ="/^[0-9a-zA-Z]+(?:(?:[\'\s\-\/])?[a-zA-Z]+)*$/";
+      $adresse ="/^[0-9a-zA-Z\s]+(?:(?:[\'\s\-\/])?[a-zA-Z]+)*$/";
       $ref = "/^[0-9a-zA-Z]*$/";
 
       $this->form_validation->set_rules('adresse','adresse',"required|regex_match[$adresse]",array('required' => 'Il faut une %s ','regex_match' => 'Il faut une %s '));
