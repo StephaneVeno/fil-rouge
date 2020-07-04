@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// toucher pas à ma PUTAIN d'indentation, merci <3
 
 /*
 * @param array librairy inflector : Librairy de réécriture url

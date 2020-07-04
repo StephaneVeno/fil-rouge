@@ -37,10 +37,13 @@
                                             <?= anchor('structure/other/info/#info', "Info", ["class" => "nav-link pl-4"]);?>
                                         </li>
                                    
-                                        <div class="dropdown nav-link active col-5">
-                                            <button type="button" data-toggle="dropdown" class="nav-link pl-4">Espace Client<span class="void"></span>
+
+
+
+                                        <div class="box dropdown nav-link active col-5">
+                                            <button type="button" data-toggle="dropdown" class="nav-link pl-4 ">Espace Client<span class="void"></span>
                                             </button>                   
-                                            <div class="dropdown-menu">
+                                            <div class="dropdown-menu ">
                                             <?php if(isset($_SESSION["client"]) && $_SESSION["client"] == true){ ?>
                                                         <a href="<?php echo site_url('admin/sup_session');?>" class="btn">se déconnecter</a>
                                             <?php } else { ?>
@@ -70,6 +73,10 @@
                                             <?php } ?>
                                             </div>
                                         </div>
+
+
+
+
 
                                         <!--STORE-->
                                         <li class="nav-item col-2 pr-5 nav-link active pl-4">
