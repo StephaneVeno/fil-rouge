@@ -3,7 +3,7 @@
             <div class="row pl-4 my-4 res-vitrine">
                 <figure class="col-12 col-sm-9 res-offre"> 
                     <a href="<?php echo site_url('/produits/index')?>">
-                        <img src="<?= base_url('assets/img/accueil/pub_guitare.png'); ?>" alt="Gibson_Ibanez" title="Réduction sur les Gibson">
+                        <img src="<?= base_url('assets/img/accueil/pub_guitare.png'); ?>" alt="Gibson_Ibanez" title="Réduction sur les Gibson" class="img-fluid">
                     </a>
                 </figure>
 
@@ -16,7 +16,7 @@
             <div class="row">
                 <figure class="col-sm-12 my-5 p-0 res-condition">
                     <a href="<?= site_url('structure/other')?>">
-                        <img src="<?= base_url('assets/img/accueil/') . 'banniere_centre_4_pictos' ?>" alt="conditions">
+                        <img src="<?= base_url('assets/img/accueil/') . 'banniere_centre_4_pictos' ?>" alt="conditions" class="img-fluid">
                     </a>
                 </figure>
             </div>
