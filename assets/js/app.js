@@ -129,3 +129,4 @@ App.bind('img[title]');*/
 			}
 
 	}*/
+

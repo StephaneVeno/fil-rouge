@@ -53,6 +53,14 @@ class Produits extends CI_Controller {
         $this->templates->display('produits/proDelete', $data = self::data(array(1,2)));
     }
 
+    public function cat() {
+        $this->templates->display('accueil', $data = self::data(array(0,2)));
+        if(uri('$1/$2/$3')) {
+            
+           $this->templates->display('accueil/index/$3', $data = self::data(array(0,2))); 
+        }
+    }
+
     public function create_produits() {
 
         if($this->input->post('create_pro')) {

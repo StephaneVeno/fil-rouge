@@ -27,7 +27,7 @@
                             <!--première nav-->
                             <nav class="navbar navbar-expand-sm firstNav px-0 py-0">
                                 <span class="d-sm-none title-nav-service mr-auto pl-4">Rubrique Client</span>
-                                <a class="navbar-brand" href="#"></a>
+                                <a class="navbar-brand" href=""></a>
                                 <button class="navbar-toggler mr-2 my-2 c-icon-button" type="button" data-toggle="collapse" data-target="#target1" aria-controls="target1" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon c-icon"></span>
                                 </button>
@@ -41,7 +41,7 @@
 
 
                                         <div class="box dropdown nav-link active col-5">
-                                            <button type="button" data-toggle="dropdown" class="nav-link pl-4 ">Espace Client<span class="void"></span>
+                                            <button type="button" data-toggle="dropdown" class="nav-link pl-4">Espace Client<span class="void"></span>
                                             </button>                   
                                             <div class="dropdown-menu ">
                                             <?php if(isset($_SESSION["client"]) && $_SESSION["client"] == true){ ?>
@@ -58,16 +58,17 @@
                                                     <label for="always_connexion">Rester connectée ?</label>
                                                     <button name="connexion" class="btn btn-success">Se connecter maintenant</button>
                                                     <?php echo form_close(); ?>
-                                                    <label  class="text-center" for="connexion">
-                                                        <a href="#" alt="Mot de passe oublié?" title="Mot de passe oublié?">Mot de passe oublié?</a>
+
+                                                    <label class="text-center col-12" for="connexion">
+                                                        <a href="" alt="Mot de passe oublié?" title="Mot de passe oublié?">Mot de passe oublié?</a>
                                                     </label>
                                                 <form class="drop-inscription" method="post" action="#">
                                                     <!--Cotée Droite-->
-                                                    <span>Vous n'êtes pas encore inscript ?</span>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                                                    <span class="col-12">Vous n'êtes pas encore inscript ?</span>
+                                                    <p class="col-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
                                                     <a href="<?php echo site_url('clients/inscription') ?>" name="inscription" class="btn btn-success">S'inscrire</a>
-                                                    <label class="text-center" for="inscription">
-                                                        <a href="#" title="plus d'information sur les modalitées d'inscription">Plus d'information</a>
+                                                    <label class="text-center col-12" for="inscription">
+                                                        <a href="" title="plus d'information sur les modalitées d'inscription">Plus d'information</a>
                                                     </label>
                                                 </form>
                                             <?php } ?>

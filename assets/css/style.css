@@ -58,7 +58,7 @@ h1,h2{
 
 [alt]{
 	transition:all .2s;
-	display:inline-flex;}
+	display:inline;}
 
 .Panier {
 	max-width: 12.5%;
@@ -85,24 +85,32 @@ h1,h2{
 
 	}
 /*refonte css liste produits*/
-.admin-produits .produits figure img{
-	background-color:white;
-	border-radius: 0 35px 35px 0;
 
-}
-.admin-produits .produits > h3 {
+.admin-produits .produits .action h3, a {
 	color:orange;
 	font-weight:501;
-	background-color:#222;
 	border-bottom:3px solid orange;
 	font-style:oblique;
+	border:none;
+
+}
+.admin-produits .produits .action  {
+	background-color:#222;
+	border-top:3px solid var(--new-c-four);
+}
+
+.action > a:hover {
+	color:var(--new-c-four);
+	transform:scale(1.1);
+	text-decoration:none;
 }
 .admin-produits .produits .info-produits h3 {
-	color:black;
+	color:whitesmoke;
 	font-weight:501;
-	border-bottom:3px solid black;
 	font-style:oblique;
-	max-width:max-content;
+}
+.admin-produits .produits .description-produits {
+	color:ivory;
 }
 
 /**=A1************************************ Media query ********************************************/
