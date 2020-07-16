@@ -4,11 +4,6 @@
 .thirdNav{
 	top:-10px;}
 
-[href="#"]{
-	display:inline-block;
-	width:0;height:0;
-	margin:0;}
-
 .navbar{
 	padding-top:0!important;}
 
@@ -53,6 +48,11 @@
 input,span{
 	font-size:.85rem;}
 
+.drop-inscription > label, .drop-inscription a {
+	display:inline;
+	padding:10px 3px ;
+}
+
 .drop-connexion,
 .drop-inscription:not(input):not([for="always"]):not([name="always"]) {
 	text-align:center;}
@@ -92,8 +92,9 @@ nav:not(.firstNav) .nav-link:hover {
 	color:black!important;}
 
 .firstNav .nav-link:hover{
-	background:#00000090;
-	color:white!important;}
+	color:var(--primary) !important;
+  	border-radius: 15px;
+  	border-bottom:1px solid var(--primary);}
 
 footer{
 	box-shadow:0 0 3px 3px #222;}

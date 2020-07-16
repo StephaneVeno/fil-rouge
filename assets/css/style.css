@@ -58,11 +58,59 @@ h1,h2{
 
 [alt]{
 	transition:all .2s;
-	display:inline-flex;}
+	display:inline;}
 
 .Panier {
 	max-width: 12.5%;
 	height: auto;
+}
+/*new css*/
+	.table-active td {
+		padding:0;
+		text-align:center;
+}
+	.table-striped {
+		overflow-x:auto;
+
+	}
+	.table-active > td textarea {
+		border:none!important;
+		height:100%;
+		background-color:#d5d5d5;
+		resize: none;
+		text-align:left!important;
+		text-indent:0!important;
+		color:black;
+		font-weight:500;
+
+	}
+/*refonte css liste produits*/
+
+.admin-produits .produits .action h3, a {
+	color:orange;
+	font-weight:501;
+	border-bottom:3px solid orange;
+	font-style:oblique;
+	border:none;
+
+}
+.admin-produits .produits .action  {
+	background-color:#222;
+	border-top:3px solid var(--new-c-four);
+}
+
+.action > a:hover {
+	color:var(--new-c-four);
+	transform:scale(1.1);
+	text-decoration:none;
+}
+.admin-produits .produits .info-produits h3 {
+	color:whitesmoke;
+	font-weight:501;
+	font-style:oblique;
+}
+.admin-produits .produits .description-produits {
+	color:ivory;
 }
 
 /**=A1************************************ Media query ********************************************/
@@ -145,6 +193,7 @@ h1,h2{
 	[alt="partenaires"] {
 		width: 87%;
 	}
+	.table-striped > tbody
 
 
 
@@ -164,6 +213,7 @@ h1,h2{
 	[alt="partenaires"] {
 		width: 87%;
 	}
+
 
 
 }
@@ -224,6 +274,10 @@ h1,h2{
 	[title="top piano"] {
 		width: 100%;
 		margin: 0 !important;
+	}
+
+	[alt="village Lorem"] {
+		display:none;
 	}
 
 	.res-condition {

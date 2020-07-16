@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// toucher pas à ma PUTAIN d'indentation, merci <3
 
 /*
 * @param array librairy inflector : Librairy de réécriture url
@@ -52,6 +51,14 @@ class Produits extends CI_Controller {
 
     public function del() {
         $this->templates->display('produits/proDelete', $data = self::data(array(1,2)));
+    }
+
+    public function cat() {
+        $this->templates->display('accueil', $data = self::data(array(0,2)));
+        if(uri('$1/$2/$3')) {
+            
+           $this->templates->display('accueil/index/$3', $data = self::data(array(0,2))); 
+        }
     }
 
     public function create_produits() {

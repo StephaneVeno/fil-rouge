@@ -4,34 +4,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Structure extends CI_Controller {
 
 
-    
-
-
-  /*
-  *
-  */
-
-  /*private function data_header($data = array() ) {
-    return $data = array(
-      'parents' => $this->produit_model->get_categories_data()
-    );
-  }
-
-  public function set_data_header() {
-    //etat supposée mutable
-    $aDefaultDisplay = array(
-      'layouts/header' => $data = self::data_header(array(0)),
-      $sViewName,
-      'layouts/footer'
-    );*/
-  
+    private function data($data = array() ) {
+           $this->load->model('produits_model');
+        return $data = 
+            array( 'dataC' => $this->produits_model->get_produits_for_client(),
+                   'data' => $this->produits_model->get_produits_for_personnal(),
+                   'cat_exist' => $this->produits_model->get_categories_data()
+            );
+    }
 
     /*
     --------------------------------------ACCEUIL------------------------------------------------
     */
   public function accueil ()
-  {
-      $this->templates->display('accueil');
+  {   
+
+      $this->templates->display('accueil', $data = self::data(array(0,2)));
+
+
   }
   
   public function liste ()
@@ -42,7 +32,6 @@ class Structure extends CI_Controller {
     /*
     --------------------------------------ANNEXES------------------------------------------------
     */
-
 
   public function plan_du_site() {
     $this->templates->display('annexes/plan_du_site');
