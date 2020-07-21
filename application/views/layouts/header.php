@@ -142,22 +142,8 @@
                             </button>
                             <div class="collapse navbar-collapse pl-0" id="target3">
                                 <ul class="navbar-nav ml-auto pl-0 pr-0 m-0">
-                                    <div class="dropdown nav-link pl-4">
-                                        <button type="button" data-toggle="dropdown">Guit/Basse
-                                            <span class="void"></span>
-                                        </button>
-                                        <ul class="dropdown-menu col-md-1 px-2">
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Guitares Electriques">Guitares Electriques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Guitares classiques">Guitares classiques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Guitares Acoustiques & Electro-Acoustiques">Guitares Acoustiques et Electro-Acoustiques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Basses Electriques">Basses Electriques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Basses Acoustiques">Basses Acoustiques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Basses Semi-Acoustiques">Basses Semi-Acoustiques</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Ukulélés">Ukulélés</a></li>
-                                            <li class="nav-item active"><a class="drop-link" href="<?php echo site_url("produits/list");?>" title="Autres instruments à cordes pincées">Autres instruments à cordes pincées</a></li>
-                                        </ul>
-                                    </div>
->
+
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Guit/Basse">Guit/Basse</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Batteries">Batteries</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Clavier">Clavier</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Studio">Studio</a></li>
