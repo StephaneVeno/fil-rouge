@@ -61,49 +61,51 @@ class Categorie extends CI_Model
 
         $this->db->delete('categorie', 'CAT_ID=' . $id);
     }
+
+    //id peut être en décalage selon la bdd, la mienne commence par -aucune'
     public function GuitBass(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=1");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=2");
         return $cat->result();
     }
     public function Batteries(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=2");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=3");
         return $cat->result();
     }
     public function Piano(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=3");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=4");
         return $cat->result();    
     }
     public function Studio(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=4");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=5");
         return $cat->result();
     }
     public function Eclairage(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=5");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=6");
         return $cat->result();
     }
     public function Dj(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=6");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=7");
         return $cat->result();
     }
     public function cases(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=7");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=8");
         return $cat->result();
     }
     public function Accessoire(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=8");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=9");
         return $cat->result();
     }
     public function InstruAVent(){
 
-        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=9");
+        $cat=$this->db->query("SELECT `PRO_LIBELLE`,`PRO_REF`,`PRO_PRIX_ACHAT`,`PRO_STOCK_PHYSIQUE`,`PRO_DESCRIPTION`,`PRO_PHOTO`,`PRO_SLUG` FROM `produits` JOIN `categorie` ON `categorie`.`CAT_ID`=`produits`.`CAT_ID` WHERE `categorie`.`CAT_ID`=10");
         return $cat->result();
     }
 }
