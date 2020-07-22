@@ -143,6 +143,7 @@
                             <div class="collapse navbar-collapse pl-0" id="target3">
                                 <ul class="navbar-nav ml-auto pl-0 pr-0 m-0">
 
+
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/GuitBass");?>" title="Guit/Basse">Guit/Basse</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Batteries");?>" title="Batteries">Batteries</a></li>
                                     <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Piano");?>" title="Clavier">Clavier</a></li>
