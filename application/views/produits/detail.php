@@ -1,4 +1,5 @@
 <!--juste pour comblé un peu le vide sans toucher a la bdd, se basée QUE sur le neuf pour le panier-->
+
 <?php $elemS = rand(0,3); ?>
 <?php $elemP = round($detail->PRO_PRIX_ACHAT*25/100,2);?>
 <?php $elemR = 'refLorem';?>
@@ -8,12 +9,6 @@
 		<ul>
 			<li>
 				<a class="text-center link-arianne" href=""><?php echo $detail->CAT_LIBELLE;?>&nbsp;</a>
-			</li>
-			<li>
-				<span class="text-center text-muted">&gt;&nbsp;</span>
-			</li>
-			<li>
-				<span class="text-center text-muted">Todo : Subcat</span>
 			</li>
 			<li>
 				<span class="text-center text-muted">&gt;&nbsp;</span>
@@ -66,6 +61,22 @@
 					</tr>
 				</table>
 				</div>
+                <?php if(isset($_SESSION["client"]) && $_SESSION["client"] == true){ ?>
+				<div class="col-sm-11 offset-1 bg-light-0 p-3 my-4 detail-tech">
+					<?= form_open('produits/store'); ?>
+						<input type="hidden" name="<?= $detail->PRO_ID ;?>">
+						<input type="hidden" name="<?= $detail->PRO_PRIX_ACHAT;?>">
+						<input type="hidden" name="<?= $detail->PRO_LIBELLE;?>">
+						<input type="hidden" name="quantity">
+						<input type="submit" value="Achetez" class="btn btn-success">
+						<input type="submit" value="Précommandez" class="btn btn-dark" name="achat">
+					<?= form_close(); ?>
+				</div>
+			<?php } else { ?>
+				<div class="col-sm-11 offset-1 bg-light-0 p-3 my-4 detail-tech">
+					<span>Vous devais être connectez pour achetez</span>
+				</div>
+			<?php } ?>
 			</div>
 		</div>
 	</div>

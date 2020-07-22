@@ -90,7 +90,7 @@ class Admin extends CI_Controller
   public function sup_session()
   {
     $this->session->unset_userdata('client', 'sess_client');
-    $this->session->sess_destroy('client', 'sess_client');
+    $this->session->session_destroy('client', 'sess_client');
     redirect('structure/accueil');
   }
 

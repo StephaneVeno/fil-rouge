@@ -162,8 +162,7 @@ transform:skew(-8deg);}
 	text-shadow:-2px 0 1px black;
 }
 
-nav.row > ul:nth-child(1) > li:nth-child(3) > span, span.text-center {
-	color:white;
+nav.row > ul > li:nth-child(3) > span, span.text-center {
 	font-size:2rem;
 	font-weight:500;
 }
