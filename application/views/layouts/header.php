@@ -143,15 +143,15 @@
                             <div class="collapse navbar-collapse pl-0" id="target3">
                                 <ul class="navbar-nav ml-auto pl-0 pr-0 m-0">
 
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Guit/Basse">Guit/Basse</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Batteries">Batteries</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Clavier">Clavier</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Studio">Studio</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Eclairage">Eclairage</a> </li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="DJ">DJ</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Cases">Cases</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Accessoires">Accessoires</a></li>
-                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("produits/list");?>" title="Accessoires">Instrument à vent</a>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/GuitBass");?>" title="Guit/Basse">Guit/Basse</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Batteries");?>" title="Batteries">Batteries</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Piano");?>" title="Clavier">Clavier</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Studio");?>" title="Studio">Studio</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Eclairage");?>" title="Eclairage">Eclairage</a> </li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Dj");?>" title="DJ">DJ</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/cases");?>" title="Cases">Cases</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/Accessoire");?>" title="Accessoires">Accessoires</a></li>
+                                    <li class="nav-item active col-xs-1"><a class="nav-link pl-4" href="<?php echo site_url("categories/InstruAVent");?>" title="Accessoires">Instrument à vent</a>
                                     </li>
                                 </ul>
                             </div>
