@@ -93,4 +93,49 @@ class Categories extends CI_Controller
     $this->Categorie->catSuppr($id);
     redirect('categories/cat_list');
   }
+  public function GuitBass()
+  {
+    $data["GuitBass"] = $this->Categorie->GuitBass();
+    $this->templates->display('categorie/GuitBass', $data);
+  }
+  public function Batteries()
+  {
+    $data["Batteries"] = $this->Categorie->Batteries();
+    $this->templates->display('categorie/Batteries', $data);
+  }
+  public function Piano()
+  {
+    $data["Piano"] = $this->Categorie->Piano();
+    $this->templates->display('categorie/Piano', $data);
+  }
+  public function Studio()
+  {
+    $data["Studio"] = $this->Categorie->Studio();
+    $this->templates->display('categorie/Studio', $data);
+  }
+  public function Eclairage()
+  {
+    $data["Eclairage"] = $this->Categorie->Eclairage();
+    $this->templates->display('categorie/Eclairage', $data);
+  }
+  public function Dj()
+  {
+    $data["Dj"] = $this->Categorie->Dj();
+    $this->templates->display('categorie/Dj', $data);
+  }
+  public function cases()
+  {
+    $data["cases"] = $this->Categorie->cases();
+    $this->templates->display('categorie/cases', $data);
+  }
+  public function Accessoire()
+  {
+    $data["Accessoire"] = $this->Categorie->Accessoire();
+    $this->templates->display('categorie/Accessoire', $data);
+  }
+  public function InstruAVent()
+  {
+    $data["InstruAVent"] = $this->Categorie->InstruAVent();
+    $this->templates->display('categorie/InstruAVent', $data);
+  }
 }
