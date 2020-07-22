@@ -22,7 +22,7 @@ class Administration extends CI_Model
     public function session_admin()
     {
 
-        $query = $this->db->query("SELECT * FROM personnels");
+        $query = $this->db->query("SELECT `PER_ID`, `PER_EMAIL`, `PER_MDP`, `PER_ROLE` FROM personnels");
         return $query->row();
     }
 }

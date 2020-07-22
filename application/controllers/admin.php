@@ -81,16 +81,11 @@ class Admin extends CI_Controller
     redirect('produits/index');
   }
 }
-  /**
-   * \brief Suppression d'une session client
-   * \return Suppression d'une session client
-   * \author Grillet Stéphane
-   * \date 20/05/2020
-   */
+
   public function sup_session()
   {
-    $this->session->unset_userdata('client', 'sess_client');
-    $this->session->sess_destroy('client', 'sess_client');
+    $this->session->unset_userdata($dataClient);
+    $this->session->sess_destroy();
     redirect('structure/accueil');
   }
 
@@ -110,28 +105,22 @@ class Admin extends CI_Controller
     else {
     $this->input->post();
     $requete = $this->Administration->session_admin();
-    $this->session->set_userdata('admin', TRUE);
     $dataAdmin = array(
       'PER_ID' => $requete->PER_ID,
-      'PER_EMAIL' => $requete->PER_EMAIL,
-      'PER_MDP' => $requete->PER_MDP,
+      'PER_EMAIL' =>$requete->PER_EMAIL,
+      'PER_MDP' =>$requete->PER_MDP,
       'PER_ROLE'=>$requete->PER_ROLE, 
 
     );
-    $this->session->set_userdata('admin', $dataAdmin);
+    $this->session->set_userdata($dataAdmin,$id);
     redirect('structure/accueil');
   }
   }
-  /**
-   * \brief Suppression d'une session client
-   * \return Suppression d'une session client
-   * \author Grillet Stéphane
-   * \date 26/05/2020
-   */
+
   public function sup_session_admin()
   {
-    $this->session->unset_userdata('admin', 'sess_admin');
-    $this->session->sess_destroy('admin', 'sess_admin');
+    $this->session->unset_userdata($dataAdmin);
+    $this->session->sess_destroy();
     redirect('structure/accueil');
   }
 }
