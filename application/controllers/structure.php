@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Structure extends CI_Controller {
 
-
     private function data($data = array() ) {
            $this->load->model('produits_model');
         return $data = 
@@ -41,4 +40,5 @@ class Structure extends CI_Controller {
     $this->templates->display('annexes/other');
 
   }
+
 }

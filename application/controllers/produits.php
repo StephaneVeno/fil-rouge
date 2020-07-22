@@ -12,10 +12,8 @@ class Produits extends CI_Controller {
         parent::__construct();
         $this->load->model('Produits_model')
                    ->helper(array('inflector', 'form'))
-                   ->library('form_validation');
+                   ->library(array('form_validation', 'session'));
     }
-
-
 
     /*
     * Simplement pour réduire la répétition
@@ -144,5 +142,46 @@ class Produits extends CI_Controller {
         $detail = $this->produits_model->get_produits($slug);
         $data['detail'] = $detail;
         $this->templates->display('produits/detail', $data);     
+    }
+
+    public function store() {
+
+            if($this->session->panier === null) {
+
+                $listItems =  array();
+                $data = array(
+                    'PRO_PRIX_ACHAT' => $this->input->post('PRO_PRIX_ACHAT'),
+                    'PRO_LIBELLE' => $this->input->post('PRO_LIBELLE'),
+                    'LIG_QUANTITE' => $this->input->post('quantity')
+                );
+
+                array_push($listItems, $data);
+
+                $this->session->set_userdata('article', $listItems);
+
+            } else {
+
+                $listItems = $this->session->panier;
+                $ref = $this->input->post('PRO_ID');
+                $getOut = FALSE;
+
+                foreach ($listItems as $k) {
+                    if($data['PRO_ID'] == $ref) {
+                        $getOut = TRUE;
+                    }
+                }
+
+                if($getOut) {
+                    echo "produits existant";
+                    redirect('produits/index', $data);
+
+                } else {
+                    array_push($listItems, $data);
+                    $this->templates->display('produits/detail', $data); 
+
+                }
+                
+            }
+        
     }
 }
